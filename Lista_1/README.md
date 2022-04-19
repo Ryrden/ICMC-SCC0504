@@ -7,7 +7,7 @@ bancárias. Em um banco:
 - cada conta bancária poderá oferecer serviços tais como: depositar, sacar, e transferir dinheiro entre
 contas;
 - o banco só pode manter dados de um cliente caso ele possua algum produto
-
+---
 2. Faça a modelagem em UML de um sistema de controle de cursos de informática equivalente a um
 módulo de matrícula de acordo com os seguintes fatos:
 - o curso pode ter mais de uma turma, no entanto, uma turma se relaciona exclusivamente com um
@@ -17,7 +17,7 @@ exclusivamente a uma determinada turma; cada turma tem um número mínimo de 10 
 para iniciar o curso;
 - um aluno pode realizar muitas matrículas, mas cada matrícula refere-se exclusivamente a uma
 turma específica e a um único aluno
-
+---
 3. Faça a modelagem em UML de um sistema de reserva para uma empresa aérea.
 - cada voo deverá estar cadastrado no sistema, pois as reservas serão relacionadas a eles; cada
 voo pode informar o número de assentos livres, e sua tripulação (conjunto de aeroviários);
@@ -31,7 +31,7 @@ decolagens por hora, além de um nome;
 fazem reservas, e cancelam reservas;
 - os passageiros podem pedir reservas nos voos, podem cancelar reservas, e podem pagar as
 reservas.
-
+---
 4. Modele em UML e implemente em Java a seguinte descrição.
 Um software de cálculo matemático possui diversas funcionalidades. Uma delas se refere à operação
 matemática entre dois operandos (float), a qual pode ser: soma, subtração, produto, ou coeficiente.
@@ -42,13 +42,12 @@ o tipo da operação; além da data (3 inteiros: dia, mês, e ano) da operação
 - Um usuário é descrito por seu nome, idade, e CPF.
 Em sua implementação Java, no programa principal, crie alguns objetos do seu modelo, realize algumas
 operações, e exiba dados dos resultados.
-
-
+---
 5. Considere o seguinte diagrama no qual há uma hierarquia de classes Personagem->SuperHeroi, e
 Personagem->Vilao; e uma agregação da classe Personagem com a classe Superpoder, isto é, um
 Personagem pode ter nenhum ou vários Superpderes.
 
-![Diagrama UML - Ex5](link)
+![Diagrama UML - Ex5](https://github.com/Ryrden/ICMC-SCC0504/blob/main/Lista_1/imgEx5.png)
 
 Implemente este projeto em Java acrescentando as seguintes características:
 - uma propriedade (atributo) “Vida” em Personagem que registre a quantidade de energia que ele
