@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package rpg_duel;
-
+import java.util.Random;
 /**
  *
  * @author prod
@@ -19,6 +19,14 @@ public class Personagem {
         this.nomeVidaReal = nomeVidaReal;
         this.vida = 100;
     }
+
+    public SuperPoder[] getPoderes() {
+        return poderes;
+    }
+
+    public void setPoderes(SuperPoder[] poderes) {
+        this.poderes = poderes;
+    }
     
     public int getVida() {
         return vida;
@@ -28,8 +36,22 @@ public class Personagem {
         this.vida = vida;
     }
     
-    public void atacar(int intensidade, Personagem alvo){
+    public void alteraVida(int dano){
+        this.vida += dano;
+    }
     
+    public int atacar(int intensidade, Personagem alvo){
+        // retorna 1 se deu certo e 0 se falhou
+        Random rn = new Random();
+        int chance = (rn.nextInt()%100) +1;
+        
+        if(Math.abs(chance) > 50){
+            alvo.alteraVida(intensidade);
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
 
     public String getNome() {

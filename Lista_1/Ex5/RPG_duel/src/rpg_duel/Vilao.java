@@ -11,8 +11,9 @@ package rpg_duel;
 public class Vilao extends Personagem {
     private int anosDePrisao;
 
-    public Vilao(String nome, String nomeVidaReal, int class_){
-        super(nome, nomeVidaReal, class_);
+    public Vilao(String nome, String nomeVidaReal, int years){
+        super(nome, nomeVidaReal);
+        this.anosDePrisao = years;
     }
     
     public int getAnosDePrisao() {
