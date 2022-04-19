@@ -11,6 +11,10 @@ package rpg_duel;
 public class Vilao extends Personagem {
     private int anosDePrisao;
 
+    public Vilao(String nome, String nomeVidaReal, int class_){
+        super(nome, nomeVidaReal, class_);
+    }
+    
     public int getAnosDePrisao() {
         return anosDePrisao;
     }

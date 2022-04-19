@@ -14,6 +14,12 @@ public class Personagem {
     private SuperPoder[] poderes;
     private int vida;
 
+    public Personagem(String nome, String nomeVidaReal){
+        this.nome = nome;
+        this.nomeVidaReal = nomeVidaReal;
+        this.vida = 100;
+    }
+    
     public int getVida() {
         return vida;
     }
