@@ -8,6 +8,15 @@ package estoquedeprodutos;
  *
  * @author ryrden
  */
-public class ProdutoNaoPerecivel {
+public class ProdutoNaoPerecivel extends Produto{
+    protected int anosDeGarantia;
+    public ProdutoNaoPerecivel(int codigo, float precoUnitario, int qntEstoque, String descricao, int anosDeGarantia){
+        super(codigo, precoUnitario, qntEstoque, descricao);
+        this.anosDeGarantia = anosDeGarantia;
+    }
+    public int getAnosDeGarantia() {
+        return anosDeGarantia;
+    }
+    
     
 }

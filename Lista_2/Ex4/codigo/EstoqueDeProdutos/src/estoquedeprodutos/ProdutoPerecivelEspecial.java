@@ -4,10 +4,21 @@
  */
 package estoquedeprodutos;
 
+import java.util.Date;
+
 /**
  *
  * @author ryrden
  */
-public class ProdutoPerecivelEspecial {
+public class ProdutoPerecivelEspecial extends ProdutoPerecivel {
+    public ProdutoPerecivelEspecial(int codigo, float precoUnitario, int qntEstoque, String descricao, Date dataValidade){
+        super();
+    }
     
+    
+    public void imprimirNotaDeControle(){
+         System.out.println("Produto "+this.codigo+", "+this.descricao
+                    +", quantidade "+this.qntEstoque
+                    +", data de validade "+this.dataValidade);
+    }
 }

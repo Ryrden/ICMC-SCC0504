@@ -14,7 +14,10 @@ public class EstoqueDeProdutos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Produto prod1 = new Produto(0,5.40,10,"Aveia");
+        ProdutoPerecivel prod2 = new Produto(1,9.80, 4, "Iogurte");
+        
+        
     }
     
 }
