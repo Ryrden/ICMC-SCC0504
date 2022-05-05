@@ -14,8 +14,8 @@ public class CampeonatoPaulista {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        TimeFutebol time1 = new TimeFutebol(4, 6, 2, 7, 6, 2,  1);
-        TimeFutebol time2 = new TimeFutebol(5, 6, 2, 7, 6, 2,  1);
+        TimeFutebol time1 = new TimeFutebol(5, 6, 2, 7, 6, 2, 1);
+        TimeFutebol time2 = new TimeFutebol(5, 6, 2, 7, 6, 2, 1);
         
         TimeFutebol timeVencedor = time1.desempataTime(time2);
         
