@@ -14,6 +14,7 @@ public class ProdutoNaoPerecivel extends Produto{
         super(codigo, precoUnitario, qntEstoque, descricao);
         this.anosDeGarantia = anosDeGarantia;
     }
+    
     public int getAnosDeGarantia() {
         return anosDeGarantia;
     }

@@ -4,17 +4,16 @@
  */
 package estoquedeprodutos;
 
-import java.util.Date;
+import java.time.LocalDate; 
 
 /**
  *
  * @author ryrden
  */
 public class ProdutoPerecivelEspecial extends ProdutoPerecivel {
-    public ProdutoPerecivelEspecial(int codigo, float precoUnitario, int qntEstoque, String descricao, Date dataValidade){
-        super();
+    public ProdutoPerecivelEspecial(int codigo, float precoUnitario, int qntEstoque, String descricao, LocalDate dataValidade){
+        super(codigo, precoUnitario, qntEstoque, descricao, dataValidade);
     }
-    
     
     public void imprimirNotaDeControle(){
          System.out.println("Produto "+this.codigo+", "+this.descricao

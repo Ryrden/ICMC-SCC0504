@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author ryrden
  */
 public class Estoque {
-    protected ArrayList<Produto> produtos;
+    protected ArrayList<Produto> produtos = new ArrayList<>();
     
     public boolean cadastrarItem(Produto item){
         if (item == null)

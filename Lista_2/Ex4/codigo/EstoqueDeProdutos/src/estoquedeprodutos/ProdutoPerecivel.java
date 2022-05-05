@@ -3,25 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package estoquedeprodutos;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
+import java.time.LocalDate;  
+import java.time.Duration;
 /**
  *
  * @author ryrden
  */
 public class ProdutoPerecivel extends Produto{
-    protected Date dataValidade;
+    protected LocalDate dataValidade;
     
-    public ProdutoPerecivel(int codigo, float precoUnitario, int qntEstoque, String descricao, Date dataValidade){
+    public ProdutoPerecivel(int codigo, float precoUnitario, int qntEstoque, String descricao, LocalDate dataValidade){
         super(codigo, precoUnitario, qntEstoque, descricao);
         this.dataValidade = dataValidade;
         
     }
     
-    public int retirarEstoque(int qnt, Date diaCorrente){
-        long difMiliSeg = diaCorrente.getTime() - this.dataValidade.getTime();
-
-        long diferenca = TimeUnit.DAYS.convert(difMiliSeg, TimeUnit.MILLISECONDS);
+    public int retirarEstoque(int qnt, LocalDate diaCorrente){
+        
+        long diferenca = Duration.between(diaCorrente.atStartOfDay(), this.dataValidade.atStartOfDay())
+                .toDays();
         if (diferenca < 30){
             this.qntEstoque = 0;
             return 0;
@@ -34,7 +34,7 @@ public class ProdutoPerecivel extends Produto{
         return qnt;    
     }
     
-    public boolean acrescentarEstoque(int qnt, Date diaCorrente){
+    public boolean acrescentarEstoque(int qnt, LocalDate diaCorrente){
         if (this.qntEstoque != 0)
             return false;
         
@@ -43,11 +43,11 @@ public class ProdutoPerecivel extends Produto{
         return true;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return dataValidade;
     }
 
-    public void setDate(Date dataValidade) {
+    public void setDate(LocalDate dataValidade) {
         this.dataValidade = dataValidade;
     }
     
