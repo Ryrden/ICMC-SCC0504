@@ -1,0 +1,17 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+
+
+/**
+ *
+ * @author prod
+ */
+public interface PegadaDeCarbono {
+    public static final int GWPCO2 = 1;
+    public static final int GWPCH4 = 28;
+    public static final int GWPN2O = 265;
+    
+    public float getPegadaDeCarbono();
+}
