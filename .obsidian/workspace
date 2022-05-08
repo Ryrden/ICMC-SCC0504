@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Lista_2/Ex5/Respost.md.md",
+            "file": "Lista_2/Ex5/resposta.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lista_2/Ex5/Respost.md.md",
+                "file": "Lista_2/Ex5/resposta.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +88,8 @@
   },
   "active": "58da88aff6d9c08f",
   "lastOpenFiles": [
+    "Lista_2/Ex5/resposta.md",
+    "Lista_2/Ex3/resposta.md",
     "Lista_2/Ex5/Respost.md.md"
   ]
 }
