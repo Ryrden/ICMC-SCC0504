@@ -8,7 +8,7 @@ package pegada.de.carbono.pkg3.pkg1;
  *
  * @author prod
  */
-public class Bicicleta {
+public class Bicicleta implements PegadaDeCarbono{
    private float CO2EmitidoNaConstrucao;
    private float CH4EmitidoNaConstrucao;
    private float N2OEmitidoNaConstrucao;
@@ -61,6 +61,14 @@ public class Bicicleta {
 
     public void trocarDeMarcha(int marcha) {
         this.marcha = marcha;
+    }
+
+    @Override
+    public float getPegadaDeCarbono() {
+        float CO2=this.CO2EmitidoNaConstrucao   * GWPCO2;
+        float CH4 = this.CH4EmitidoNaConstrucao * GWPCH4;
+        float N2O = this.N2OEmitidoNaConstrucao * GWPN2O;
+        return CO2 + CH4 + N2O;
     }
    
 }

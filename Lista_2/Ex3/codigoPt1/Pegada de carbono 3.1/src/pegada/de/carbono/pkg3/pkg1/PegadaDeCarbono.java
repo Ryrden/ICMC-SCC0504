@@ -13,5 +13,5 @@ public interface PegadaDeCarbono {
     public static final int GWPCH4 = 28;
     public static final int GWPN2O = 265;
     
-    public float getPegadaDeCarbono(float CO2, float CH4, float N2O);
+    public float getPegadaDeCarbono();
 }
