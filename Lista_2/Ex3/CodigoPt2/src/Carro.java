@@ -2,25 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pegada.de.carbono.pkg3.pkg1;
+
 
 /**
  *
  * @author prod
  */
-public class Bicicleta implements PegadaDeCarbono{
+public class Carro implements PegadaDeCarbono{
    private float CO2EmitidoNaConstrucao;
    private float CH4EmitidoNaConstrucao;
    private float N2OEmitidoNaConstrucao;
    private float kilometrosRodados;
-   private int   marcha;
+   private float combustivelGastoPorKm;
+   private boolean carroLigado;
 
-    public Bicicleta(float CO2EmitidoNaConstrucao, float CH4EmitidoNaConstrucao, float N2OEmitidoNaConstrucao, float kilometrosRodados) {
+    public Carro(float CO2EmitidoNaConstrucao, float CH4EmitidoNaConstrucao, float N2OEmitidoNaConstrucao, float kilometrosRodados, float combustivelGastoPorKm) {
         this.CO2EmitidoNaConstrucao = CO2EmitidoNaConstrucao;
         this.CH4EmitidoNaConstrucao = CH4EmitidoNaConstrucao;
         this.N2OEmitidoNaConstrucao = N2OEmitidoNaConstrucao;
         this.kilometrosRodados = kilometrosRodados;
-        this.marcha = 1;
+        this.combustivelGastoPorKm = combustivelGastoPorKm;
+        this.carroLigado = false;
     }
 
     public float getCO2EmitidoNaConstrucao() {
@@ -55,20 +57,29 @@ public class Bicicleta implements PegadaDeCarbono{
         this.kilometrosRodados = kilometrosRodados;
     }
 
-    public int getMarcha() {
-        return marcha;
+    public float getCombustivelGastoPorKm() {
+        return combustivelGastoPorKm;
     }
 
-    public void trocarDeMarcha(int marcha) {
-        this.marcha = marcha;
+    public void setCombustivelGastoPorKm(float combustivelGastoPorKm) {
+        this.combustivelGastoPorKm = combustivelGastoPorKm;
     }
 
+    public boolean isCarroLigado() {
+        return carroLigado;
+    }
+
+    public void ligCarro() {
+        this.carroLigado = !this.carroLigado;
+    }
+    
     @Override
     public float getPegadaDeCarbono() {
-        float CO2=this.CO2EmitidoNaConstrucao   * GWPCO2;
+        float CO2 = this.CO2EmitidoNaConstrucao * GWPCO2;
         float CH4 = this.CH4EmitidoNaConstrucao * GWPCH4;
         float N2O = this.N2OEmitidoNaConstrucao * GWPN2O;
-        return CO2 + CH4 + N2O;
+        float pegadaPerKM = this.kilometrosRodados * (float) 0.0051 * GWPCO2; // emição por km rodade de CO2
+        
+        return CO2 + CH4 + N2O + pegadaPerKM;
     }
-   
 }

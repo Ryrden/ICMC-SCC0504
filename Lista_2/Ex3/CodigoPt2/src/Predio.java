@@ -2,25 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pegada.de.carbono.pkg3.pkg1;
+
 
 /**
  *
  * @author prod
  */
-public class Bicicleta implements PegadaDeCarbono{
+abstract class Predio implements PegadaDeCarbono{
    private float CO2EmitidoNaConstrucao;
    private float CH4EmitidoNaConstrucao;
    private float N2OEmitidoNaConstrucao;
-   private float kilometrosRodados;
-   private int   marcha;
+   private int   andares;
+   private String[] materiaisUsados;
+   private boolean horarioDeFuncionamento; 
 
-    public Bicicleta(float CO2EmitidoNaConstrucao, float CH4EmitidoNaConstrucao, float N2OEmitidoNaConstrucao, float kilometrosRodados) {
+    public Predio(float CO2EmitidoNaConstrucao, float CH4EmitidoNaConstrucao, float N2OEmitidoNaConstrucao) {
         this.CO2EmitidoNaConstrucao = CO2EmitidoNaConstrucao;
         this.CH4EmitidoNaConstrucao = CH4EmitidoNaConstrucao;
         this.N2OEmitidoNaConstrucao = N2OEmitidoNaConstrucao;
-        this.kilometrosRodados = kilometrosRodados;
-        this.marcha = 1;
+        this.horarioDeFuncionamento = false;
     }
 
     public float getCO2EmitidoNaConstrucao() {
@@ -47,22 +47,27 @@ public class Bicicleta implements PegadaDeCarbono{
         this.N2OEmitidoNaConstrucao = N2OEmitidoNaConstrucao;
     }
 
-    public float getKilometrosRodados() {
-        return kilometrosRodados;
+    public int getAndares() {
+        return andares;
     }
 
-    public void setKilometrosRodados(float kilometrosRodados) {
-        this.kilometrosRodados = kilometrosRodados;
+    public void setAndares(int andares) {
+        this.andares = andares;
     }
 
-    public int getMarcha() {
-        return marcha;
+    public String[] getMateriaisUsados() {
+        return materiaisUsados;
     }
 
-    public void trocarDeMarcha(int marcha) {
-        this.marcha = marcha;
+    public void setMateriaisUsados(String[] materiaisUsados) {
+        this.materiaisUsados = materiaisUsados;
     }
 
+    public boolean entrarEmHorarioDeFuncionmento(){
+        this.horarioDeFuncionamento = !this.horarioDeFuncionamento;
+        return this.horarioDeFuncionamento;
+    }
+    
     @Override
     public float getPegadaDeCarbono() {
         float CO2=this.CO2EmitidoNaConstrucao   * GWPCO2;
@@ -70,5 +75,4 @@ public class Bicicleta implements PegadaDeCarbono{
         float N2O = this.N2OEmitidoNaConstrucao * GWPN2O;
         return CO2 + CH4 + N2O;
     }
-   
 }
