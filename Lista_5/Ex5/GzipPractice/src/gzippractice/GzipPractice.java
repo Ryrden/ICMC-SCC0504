@@ -13,6 +13,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
@@ -32,18 +33,23 @@ public class GzipPractice implements Serializable{
             GZIPOutputStream compacter = new GZIPOutputStream(dataOutput);
             ObjectOutputStream serializer = new ObjectOutputStream(compacter);
             
-            Endereco endereco = new Endereco("13566590","Av. Trab São Carlense,400");
+            Endereco endereco = new Endereco("13566590","Av. Trab Sao Carlense,400");
             DadosPessoais pessoaEscrita = new DadosPessoais(endereco, "Ryan S",20);
             
             serializer.writeObject(pessoaEscrita);
+            serializer.flush();
+            serializer.close();
             
             FileInputStream dataInput = new FileInputStream(data);
-            ObjectInputStream deserializer = new ObjectInputStream(dataInput);
+            GZIPInputStream descompacter = new GZIPInputStream(dataInput);
+            ObjectInputStream deserializer = new ObjectInputStream(descompacter);
             
             DadosPessoais pessoaLeitura = (DadosPessoais) deserializer.readObject();
+            deserializer.close();
             
-            System.out.println(pessoaLeitura);
-            
+            System.out.println(pessoaLeitura.getNome());
+            System.out.println(pessoaLeitura.getIdade());
+            System.out.println(pessoaLeitura.getEndereco());
         }catch(IOException e){
             System.out.println("Error: " + e);
         }catch (ClassNotFoundException ex) {

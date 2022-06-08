@@ -21,12 +21,8 @@ public class DadosPessoais implements Serializable{
         this.idade = idade;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public String getEndereco() {
+        return endereco.getEnderecoCompleto();
     }
 
     public String getNome() {

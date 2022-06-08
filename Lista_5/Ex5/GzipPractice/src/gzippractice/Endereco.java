@@ -13,12 +13,16 @@ import java.io.Serializable;
 public class Endereco implements Serializable{
     private String CEP;
     private String logradouro;
-
+    
     public Endereco(String CEP, String logradouro) {
         this.CEP = CEP;
         this.logradouro = logradouro;
     }
-
+    
+    public String getEnderecoCompleto(){
+        return this.logradouro + this.CEP;
+    }
+       
     public String getCEP() {
         return CEP;
     }
