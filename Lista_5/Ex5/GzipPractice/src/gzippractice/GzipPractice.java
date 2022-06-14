@@ -27,7 +27,7 @@ public class GzipPractice implements Serializable{
      */
     public static void main(String[] args) {
         try{
-            File data = new File("datafile.txt");
+            File data = new File("../datafile.txt");
             data.createNewFile();
             FileOutputStream dataOutput = new FileOutputStream(data);
             GZIPOutputStream compacter = new GZIPOutputStream(dataOutput);
