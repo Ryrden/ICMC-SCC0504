@@ -9,6 +9,5 @@ package decoratorpractice;
  * @author ryan.souza
  */
 public abstract class Juros {
-    public abstract float calcula(Divida divida);
-    
+    abstract float calcula(Divida divida);
 }
